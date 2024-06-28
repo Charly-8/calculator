@@ -1,0 +1,92 @@
+@use 'mixins.scss' as m;
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #e9dff8;
+}
+
+.contenedorUno {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);  
+    width: 25%;
+    border-radius: 2rem;
+    position: absolute;
+
+    @include m.mobile {
+        width: 85%;
+    }
+
+    @include m.tablet {
+        width: 60%;
+    }
+
+    &__titulo {
+        color: #FFFFFF;
+    }
+}
+
+.resultado {
+    background-color: white;
+    width: 80%;
+    padding: 2rem;
+    border-radius: 1rem;
+    overflow: auto;
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+.contenedorDos {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.numeros {
+    border-top: .5px solid #B0B0B0;
+    margin-bottom: .5rem;
+
+    &__p {
+        padding: 1rem;
+        border-radius: .3rem;
+        background-color: #7e7e7e;
+        color: #FFFFFF;
+
+        &:hover {
+            background-color: #6b6b6b;
+        }
+    }
+
+    &__p--esp {
+        background-color: #FA3F7A;
+
+        &:hover {
+            background-color: #df1c5a;
+        }
+    }
+}
+
+.numeros--flex {
+    display: flex;
+    justify-content: space-around;
+}
